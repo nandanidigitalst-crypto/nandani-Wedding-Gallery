@@ -4,297 +4,203 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Nandani Video Mixing Lab | Wedding Photography & Video</title>
+  <title>Nandani Video Mixing Lab | Manjaura Bazar</title>
 
   <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .studio-gallery {
+      padding: 20px;
+    }
+
+    .studio-gallery h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .banner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .banner-card {
+      overflow: hidden;
+      border-radius: 18px;
+      background: #111;
+      box-shadow: 0 8px 25px rgba(0,0,0,.35);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .banner-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .banner-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-buttons a {
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 15px;
+    }
+
+    .service-box {
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      background: linear-gradient(135deg,#171717,#292929);
+      border: 1px solid rgba(255,215,0,.25);
+      font-weight: bold;
+    }
+
+    .service-box span {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .studio-about {
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 15px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .footer strong {
+      font-size: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header class="topbar">
+
   <div>
     <div class="brand">🎬 Nandani Video Mixing Lab</div>
+
     <div class="tagline">
       आपकी शादी की खूबसूरत यादें — फोटो, वीडियो और एडिटिंग एक ही जगह
     </div>
   </div>
 
-  <button class="ghost" onclick="showHelp()">कैसे चलाएँ?</button>
+  <button class="ghost" onclick="showHelp()">
+    कैसे चलाएँ?
+  </button>
+
 </header>
 
 
 <main>
 
+  <!-- STUDIO BANNER PHOTOS -->
+  <section class="panel studio-gallery">
+
+    <h2>📸 Nandani Video Mixing Lab</h2>
+
+    <div class="banner-grid">
+
+      <div class="banner-card">
+        <img
+          src="/studio-banner-1.png"
+          alt="Nandani Video Mixing Lab Studio"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="banner-card">
+        <img
+          src="/studio-banner-2.png"
+          alt="Nandani Video Mixing Lab Services"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="banner-card">
+        <img
+          src="/studio-banner-3.png"
+          alt="Nandani Video Mixing Lab Wedding Services"
+          loading="lazy"
+        >
+      </div>
+
+    </div>
+
+  </section>
+
+
   <!-- STUDIO INTRO -->
   <section class="hero">
 
     <div>
-      <span class="pill">📸 Wedding Photo & Video Studio</span>
 
-      <h1>Nandani Video Mixing Lab</h1>
+      <span class="pill">
+        📸 Professional Wedding Studio
+      </span>
 
-      <p>
-        Nandani Video Mixing Lab में आपकी शादी और खास पलों की
-        Photography, Videography और Video Mixing की सुविधा उपलब्ध है।
-        हम आपकी यादों को खूबसूरत और यादगार बनाने के लिए काम करते हैं।
+      <h1>
+        Nandani Video Mixing Lab
+      </h1>
+
+      <p class="studio-about">
+        Nandani Video Mixing Lab, Manjaura Bazar में
+        Wedding Photography, Videography, Video Mixing,
+        Cinematic Editing, Album Designing और Drone Shoot
+        जैसी सेवाएँ उपलब्ध हैं।
+      </p>
+
+      <p class="studio-about">
+        हमारा उद्देश्य आपकी शादी और जीवन के खास पलों को
+        खूबसूरत तरीके से रिकॉर्ड और एडिट करके ऐसी यादें
+        बनाना है जिन्हें आप हमेशा संभालकर रख सकें।
       </p>
 
       <p>
-        📍 <b>Manjaura Bazar, Mohimdih Road</b>
+        📍 <b>Mohimdih Road, Manjaura Bazar</b>
       </p>
 
-      <div style="margin-top:15px;">
+      <div class="contact-buttons">
+
         <a
           href="https://maps.app.goo.gl/fkReW4CvgrQ3FPxM9?g_st=ac"
           target="_blank"
           class="primary"
-          style="text-decoration:none;display:inline-block;"
         >
-          📍 Google Maps पर रास्ता देखें
+          📍 Google Maps
         </a>
-      </div>
-    </div>
 
-
-    <div class="hero-card">
-
-      <div>📸 Wedding Photography</div>
-
-      <div>🎥 Wedding Videography</div>
-
-      <div>🎬 Video Mixing & Editing</div>
-
-      <div>💍 Wedding Album</div>
-
-      <div>📤 Photo & Video Upload</div>
-
-      <div>▶️ Online Video Playback</div>
-
-    </div>
-
-  </section>
-
-
-  <!-- CONTACT DETAILS -->
-  <section class="panel">
-
-    <div class="panel-title">
-      <h2>📞 हमारे संपर्क में आएँ</h2>
-    </div>
-
-    <div class="hero-card">
-
-      <div>
-        👤 <b>Studio:</b> Nandani Video Mixing Lab
-      </div>
-
-      <div>
-        👨‍💼 <b>Owner:</b> Ranjeet Jee
-      </div>
-
-      <div>
-        📱 <b>Mobile:</b>
-        <a href="tel:9631742755">9631742755</a>
-        ,
-        <a href="tel:7667355307">7667355307</a>
-      </div>
-
-      <div>
-        💬 <b>WhatsApp:</b>
-        <a href="https://wa.me/919631742755" target="_blank">
-          9631742755
-        </a>
-      </div>
-
-      <div>
-        📧 <b>Email:</b>
-        <a href="mailto:nandanidigitalst@gmail.com">
-          nandanidigitalst@gmail.com
-        </a>
-      </div>
-
-      <div>
-        📍 <b>Address:</b>
-        Mohimdih Road, Manjaura Bazar, Manjaura
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- SOCIAL MEDIA -->
-  <section class="panel">
-
-    <div class="panel-title">
-      <h2>🌐 हमारे Social Media</h2>
-    </div>
-
-    <div class="hero-card">
-
-      <div>
-        📸
         <a
-          href="https://www.instagram.com/nandani_video_mixing_lab44?igsh=NHpqNDBycjI4M3Fz"
+          href="https://wa.me/919631742755"
           target="_blank"
+          class="primary"
         >
-          Instagram पर हमें Follow करें
+          💬 WhatsApp
         </a>
-      </div>
 
-      <div>
-        👍 Facebook — जल्द उपलब्ध होगा
-      </div>
-
-      <div>
-        ▶️ YouTube — जल्द उपलब्ध होगा
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- WEDDING ALBUM -->
-  <section class="panel">
-
-    <div class="panel-title">
-
-      <h2>💍 Wedding Album</h2>
-
-      <button class="primary" onclick="openModal()">
-        ＋ नया Wedding
-      </button>
-
-    </div>
-
-    <div id="weddings" class="wedding-grid"></div>
-
-  </section>
-
-
-  <!-- GALLERY -->
-  <section id="galleryPanel" class="panel hidden">
-
-    <div class="panel-title">
-
-      <div>
-
-        <button class="back" onclick="closeGallery">
-          ← Back
-        </button>
-
-        <h2 id="galleryTitle"></h2>
-
-      </div>
-
-      <label class="upload-btn">
-
-        📤 Photo / Video Upload
-
-        <input
-          id="fileInput"
-          type="file"
-          accept="image/*,video/*"
-          multiple
-          hidden
-        >
-
-      </label>
-
-    </div>
-
-
-    <div class="limits">
-
-      Browser से upload chunk-by-chunk होता है,
-      इसलिए लंबे वीडियो के लिए भी बेहतर है।
-      वास्तविक सीमा server disk/hosting पर निर्भर करेगी।
-
-    </div>
-
-
-    <div id="uploads" class="uploads"></div>
-
-    <div id="files" class="media-grid"></div>
-
-  </section>
-
-</main>
-
-
-<!-- NEW WEDDING MODAL -->
-<div id="modal" class="modal hidden">
-
-  <div class="modal-box">
-
-    <button class="close" onclick="closeModal()">×</button>
-
-    <h2>नया Wedding Album</h2>
-
-    <input
-      id="weddingName"
-      placeholder="जैसे: Rahul ❤️ Priya Wedding"
-      maxlength="120"
-    >
-
-    <button
-      class="primary full"
-      onclick="createWedding()"
-    >
-      Album बनाएं
-    </button>
-
-  </div>
-
-</div>
-
-
-<!-- HELP -->
-<div id="help" class="modal hidden">
-
-  <div class="modal-box help">
-
-    <button class="close" onclick="hideHelp()">×</button>
-
-    <h2>कैसे चलाएँ?</h2>
-
-    <ol>
-
-      <li>
-        नया Wedding Album बनाएं।
-      </li>
-
-      <li>
-        Album खोलकर Photo / Video Upload दबाएं।
-      </li>
-
-      <li>
-        बड़ा वीडियो chunks में upload होगा और progress दिखेगा।
-      </li>
-
-      <li>
-        Upload पूरा होने के बाद video सीधे browser में play किया जा सकता है।
-      </li>
-
-      <li>
-        Download और Delete भी उपलब्ध हैं।
-      </li>
-
-    </ol>
-
-    <p>
-      <b>ध्यान दें:</b>
-      20 GB limit application में रखी गई है;
-      hosting/server की available disk space और bandwidth अलग से चाहिए।
-    </p>
-
-  </div>
-
-</div>
-
-
-<script src="/app.js"></script>
-
-</body>
-</html>
+        <a
+          href="tel:9631742755"
+          class="primary"
