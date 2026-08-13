@@ -1,1 +1,78 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nandani Wedding Gallery</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="brand">💍 Nandani Wedding Gallery</div>
+    <div class="tagline">आपकी शादी की यादें — फोटो और लंबे वीडियो एक ही जगह</div>
+  </div>
+  <button class="ghost" onclick="showHelp()">कैसे चलाएँ?</button>
+</header>
 
+<main>
+  <section class="hero">
+    <div>
+      <span class="pill">20 GB तक single file</span>
+      <h1>Wedding Photos & Videos</h1>
+      <p>Wedding album बनाएँ, बड़े वीडियो upload करें, progress देखें और online playback करें.</p>
+    </div>
+    <div class="hero-card">
+      <div>📸 Photo upload</div><div>🎬 Long video upload</div><div>▶️ Online playback</div><div>⬇️ Download & 🗑️ Delete</div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-title">
+      <h2>Wedding Album</h2>
+      <button class="primary" onclick="openModal()">＋ नया Wedding</button>
+    </div>
+    <div id="weddings" class="wedding-grid"></div>
+  </section>
+
+  <section id="galleryPanel" class="panel hidden">
+    <div class="panel-title">
+      <div>
+        <button class="back" onclick="closeGallery()">← Back</button>
+        <h2 id="galleryTitle"></h2>
+      </div>
+      <label class="upload-btn">📤 Photo / Video Upload<input id="fileInput" type="file" accept="image/*,video/*" multiple hidden></label>
+    </div>
+    <div class="limits">Browser से upload chunk-by-chunk होता है, इसलिए लंबे वीडियो के लिए भी बेहतर है. वास्तविक सीमा server disk/hosting पर निर्भर करेगी.</div>
+    <div id="uploads" class="uploads"></div>
+    <div id="files" class="media-grid"></div>
+  </section>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">×</button>
+    <h2>नया Wedding Album</h2>
+    <input id="weddingName" placeholder="जैसे: Rahul ❤️ Priya Wedding" maxlength="120">
+    <button class="primary full" onclick="createWedding()">Album बनाएं</button>
+  </div>
+</div>
+
+<div id="help" class="modal hidden">
+  <div class="modal-box help">
+    <button class="close" onclick="hideHelp()">×</button>
+    <h2>कैसे चलाएँ?</h2>
+    <ol>
+      <li>नया Wedding Album बनाएं.</li>
+      <li>Album खोलकर Photo / Video Upload दबाएं.</li>
+      <li>बड़ा वीडियो 8 MB chunks में upload होगा और progress दिखेगा.</li>
+      <li>Upload पूरा होने के बाद video सीधे browser में play किया जा सकता है.</li>
+      <li>Download और Delete भी उपलब्ध हैं.</li>
+    </ol>
+    <p><b>ध्यान दें:</b> 20 GB limit application में रखी गई है; hosting/server की available disk space और bandwidth अलग से चाहिए.</p>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
