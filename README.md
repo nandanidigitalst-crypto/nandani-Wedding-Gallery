@@ -1,54 +1,76 @@
-# Nandani Wedding Gallery — Railway Ready
+# Nandani Wedding Gallery
 
-Wedding photos और long videos के लिए responsive gallery website.
+Secure wedding photo/video gallery with separate **Admin Login** and **Customer Login**.
 
-## Features
-- Wedding name + album
-- Photo upload
-- Long video upload
+## Login system
+
+### Admin
+Open `/admin.html`.
+
+Set these Railway/server variables:
+
+- `ADMIN_USERNAME` — optional, default `admin`
+- `ADMIN_PASSWORD` — required, strong password
+
+For a password hash instead of plain environment value, use `ADMIN_PASSWORD_HASH` generated with Node's `crypto.scrypt`; do not put secrets in GitHub.
+
+Admin can:
+- Create customers/weddings
+- Generate a Wedding ID
+- Set a customer Access Code
+- Set package price
+- Mark payment paid/unpaid
+- Upload/delete photos and videos
+- Open a private wedding gallery
+
+### Customer
+Open `/customer.html`.
+
+Customer logs in with:
+- **Wedding ID** like `WED-A1B2C3`
+- **Access Code** created by the admin
+
+Customers can only see/download files belonging to their own wedding.
+
+Sessions use an HttpOnly cookie. Passwords/access codes are stored as scrypt hashes. Media routes are also authenticated, so a direct media URL cannot be used to bypass the customer login.
+
+## Uploads
 - 8 MB chunked uploads
-- Upload progress
-- Browser video playback
+- Application single-file limit: 20 GB
+- Photos and long videos
+- Browser playback
 - Download
-- Delete
-- Mobile responsive design
-- Application-level 20 GB single-file limit
-- Persistent storage support via `STORAGE_ROOT`
+- Admin-only upload/delete
 
-## Railway deployment
+## Railway
+Deploy the repository and configure:
 
-### 1. GitHub
-ZIP को extract करके पूरा project एक GitHub repository में upload करें.
-
-### 2. Railway
-Railway में **New Project → Deploy from GitHub Repo** चुनें और repository select करें.
-
-### 3. Domain
-Deployment के बाद **Settings → Networking → Generate Domain** करें.
-
-### 4. Persistent Volume — जरूरी
-Railway में service खोलें:
-**Volumes → Add Volume**
-
-Mount path रखें:
-`/app/storage`
-
-Environment variable जोड़ें:
 `STORAGE_ROOT=/app/storage`
 
-इससे uploaded photos/videos और album database persistent storage में रहेंगे.
+Attach a Railway Volume at:
 
-### 5. बड़े वीडियो
-20 GB application limit है, लेकिन वास्तविक सीमा Volume size, hosting plan, bandwidth और proxy limits पर निर्भर करेगी.
-यदि 20 GB तक files रखनी हैं तो Volume को पर्याप्त बड़ा रखें.
+`/app/storage`
 
-## Important
-यह version local filesystem/Volume पर files रखता है. बहुत बड़ी wedding libraries के लिए production में S3-compatible object storage (जैसे Cloudflare R2, AWS S3 आदि) बेहतर और scalable विकल्प है.
+Also configure:
+
+`ADMIN_USERNAME=admin`
+`ADMIN_PASSWORD=<your strong password>`
+
+Generate the Railway domain after deployment.
+
+For very large libraries, object storage such as S3-compatible storage is recommended.
 
 ## Local run
-Node.js 18+:
-1. `npm install`
-2. `npm start`
-3. `http://localhost:3000`
 
-Default local storage: `./storage/`
+Node.js 18+:
+
+```bash
+npm install
+ADMIN_PASSWORD=ChangeThisStrongPassword npm start
+```
+
+Then open:
+
+- `/` — public studio page
+- `/admin.html` — admin login
+- `/customer.html` — customer login
