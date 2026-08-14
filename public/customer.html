@@ -16,3 +16,234 @@
 </section>
 </main>
 <script src="/customer.js"></script></body></html>
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Nandani Customer Gallery</title>
+
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .studio-info {
+      margin: 20px auto;
+      max-width: 900px;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(20, 30, 60, .85);
+      color: white;
+    }
+
+    .studio-info h2 {
+      margin-top: 0;
+    }
+
+    .studio-address {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .studio-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .studio-links a {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
+      background: #333;
+    }
+
+    .studio-links a:hover {
+      opacity: .85;
+    }
+
+    .map-box {
+      margin-top: 20px;
+    }
+
+    .map-box a {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: #4285f4;
+      color: white;
+      text-decoration: none;
+    }
+
+    .platform-title {
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    .contact-line {
+      margin: 7px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div>
+    <div class="brand">🎥 Nandani Customer Gallery</div>
+    <div class="tagline">आपकी शादी की यादें</div>
+  </div>
+
+  <button class="ghost" onclick="logout()">Logout</button>
+</header>
+
+<main>
+
+  <!-- CUSTOMER LOGIN -->
+  <section id="loginPanel" class="panel auth-panel">
+
+    <div class="panel-title">
+      <h2>Customer Login</h2>
+    </div>
+
+    <form id="loginForm" class="form-grid">
+
+      <label>
+        Wedding ID
+        <input
+          id="loginId"
+          placeholder="जैसे WED-A1B2C3"
+          autocomplete="off"
+          required
+        >
+      </label>
+
+      <label>
+        Access Code
+        <input
+          id="accessCode"
+          type="password"
+          placeholder="अपना access code"
+          required
+        >
+      </label>
+
+      <button class="primary full" type="submit">
+        Gallery खोलें
+      </button>
+
+      <div id="loginError" class="error"></div>
+
+    </form>
+  </section>
+
+
+  <!-- CUSTOMER GALLERY -->
+  <section id="gallery" class="panel hidden">
+
+    <div class="panel-title">
+      <div>
+        <h2 id="title">Wedding Gallery</h2>
+        <div id="customer" class="muted"></div>
+      </div>
+    </div>
+
+
+    <!-- STUDIO INFORMATION -->
+    <div class="studio-info">
+
+      <h2>🎥 Nandani Video Mixing Lab</h2>
+
+      <div class="studio-address">
+        <strong>Studio Address:</strong><br>
+        Mohimdih Road, Manjaura Bazar
+      </div>
+
+      <div class="contact-line">
+        📞 <strong>Phone:</strong>
+        <a href="tel:9631742755">9631742755</a>,
+        <a href="tel:7667355307">7667355307</a>
+      </div>
+
+      <div class="contact-line">
+        📧 <strong>Email:</strong>
+        <a href="mailto:nandanidigitalst@gmail.com">
+          nandanidigitalst@gmail.com
+        </a>
+      </div>
+
+
+      <!-- ALL PLATFORMS -->
+      <h3 class="platform-title">
+        🌐 हमारे सभी प्लेटफॉर्म
+      </h3>
+
+      <div class="studio-links">
+
+        <a
+          href="https://maps.app.goo.gl/32N8awM7aWvT9myK7?g_st=ac"
+          target="_blank"
+          rel="noopener">
+          📍 Google Maps
+        </a>
+
+        <a
+          href="https://wa.me/message/SJBT6L5NMMNTE1"
+          target="_blank"
+          rel="noopener">
+          💬 WhatsApp
+        </a>
+
+        <a
+          href="https://www.instagram.com/nandani_video_mixing_lab44?igsh=NHpqNDBycjI4M3Fz"
+          target="_blank"
+          rel="noopener">
+          📸 Instagram
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/19JQPohm9b/"
+          target="_blank"
+          rel="noopener">
+          👍 Facebook
+        </a>
+
+        <a
+          href="https://nandani-wedding-gallery-production.up.railway.app/customer.html"
+          target="_blank"
+          rel="noopener">
+          🌐 Website
+        </a>
+
+      </div>
+
+      <div class="map-box">
+        <a
+          href="https://maps.app.goo.gl/32N8awM7aWvT9myK7?g_st=ac"
+          target="_blank"
+          rel="noopener">
+          🗺️ Studio का Location देखें
+        </a>
+      </div>
+
+    </div>
+
+
+    <!-- WEDDING MEDIA -->
+    <div class="panel-title">
+      <h2>📸 आपकी Wedding Media</h2>
+    </div>
+
+    <div id="files" class="media-grid"></div>
+
+  </section>
+
+</main>
+
+<script src="/customer.js"></script>
+
+</body>
+</html>
