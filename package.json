@@ -1,13 +1,14 @@
 {
   "name": "nandani-wedding-gallery",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Wedding photo and long-video gallery with resumable chunk uploads.",
+  "description": "Wedding photo/video gallery with admin, customer portal and Razorpay payments.",
   "main": "server.js",
   "scripts": { "start": "node server.js" },
   "dependencies": {
     "express": "^4.21.2",
     "cors": "^2.8.5",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "razorpay": "^2.9.6"
   }
 }
