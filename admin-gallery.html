@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin Gallery | Nandani</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="topbar"><div><div class="brand">📁 Admin Gallery</div><div id="sub" class="tagline"></div></div><div><button class="ghost" onclick="location.href='/admin.html'">← Admin</button><button class="ghost" onclick="logout()">Logout</button></div></header>
+<main><section class="panel"><div class="panel-title"><h2 id="title"></h2><label class="upload-btn">📤 Photo / Video Upload<input id="fileInput" type="file" accept="image/*,video/*" multiple hidden></label></div>
+<div class="limits">Admin uploads 8 MB chunks में होंगे; single file limit 20 GB.</div><div id="uploads" class="uploads"></div><div id="files" class="media-grid"></div></section></main>
+<script src="/admin-gallery.js"></script></body></html>

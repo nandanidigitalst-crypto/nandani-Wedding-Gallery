@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nandani Customer Gallery</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="topbar"><div><div class="brand">💍 Nandani Customer Gallery</div><div class="tagline">आपकी शादी की यादें</div></div><button class="ghost" onclick="logout()">Logout</button></header>
+<main>
+<section id="loginPanel" class="panel auth-panel"><div class="panel-title"><h2>Customer Login</h2></div>
+<form id="loginForm" class="form-grid">
+<label>Wedding ID<input id="loginId" placeholder="जैसे WED-A1B2C3" autocapitalize="characters" required></label>
+<label>Access Code<input id="accessCode" type="password" placeholder="आपका access code" required></label>
+<button class="primary full" type="submit">Gallery खोलें</button><div id="loginError" class="error"></div>
+</form></section>
+<section id="gallery" class="panel hidden">
+<div class="panel-title"><div><h2 id="title"></h2><div id="customer" class="muted"></div></div></div>
+<div id="files" class="media-grid"></div>
+</section>
+</main>
+<script src="/customer.js"></script></body></html>

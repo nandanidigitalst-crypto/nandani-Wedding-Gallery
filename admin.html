@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nandani Admin Panel</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header class="topbar"><div><div class="brand">🔐 Nandani Admin Panel</div><div class="tagline">Wedding Gallery Management</div></div><button class="ghost" onclick="logout()">Logout</button></header>
+<main>
+<section id="loginPanel" class="panel auth-panel"><div class="panel-title"><h2>Admin Login</h2></div>
+<form id="loginForm" class="form-grid">
+<label>Username<input id="username" value="admin" autocomplete="username" required></label>
+<label>Password<input id="password" type="password" autocomplete="current-password" required></label>
+<button class="primary full" type="submit">Login</button><div id="loginError" class="error"></div>
+</form></section>
+<section id="dashboard" class="panel hidden">
+<div class="panel-title"><div><h2>👑 Admin Dashboard</h2><div class="muted">Customers, wedding albums और uploads manage करें.</div></div><button class="primary" onclick="openCreate()">＋ नया Customer</button></div>
+<div id="createdBox" class="success hidden"></div>
+<div id="customers" class="admin-list"></div>
+</section>
+</main>
+<div id="modal" class="modal hidden"><div class="modal-box"><button class="close" onclick="closeCreate()">×</button><h2>नया Customer / Wedding</h2>
+<form id="createForm" class="form-grid">
+<label>Wedding Name<input id="wName" placeholder="Rahul ❤️ Priya Wedding" required></label>
+<label>Customer Name<input id="cName" placeholder="Rahul Kumar" required></label>
+<label>Mobile<input id="cMobile" inputmode="tel"></label>
+<label>Email<input id="cEmail" type="email"></label>
+<label>Package Price (₹)<input id="price" type="number" min="0" value="0"></label>
+<label>Customer Access Code<input id="accessCode" minlength="4" placeholder="कम से कम 4 characters" required></label>
+<button class="primary full" type="submit">Customer बनाएं</button>
+<div id="createError" class="error"></div>
+</form></div></div>
+<script src="/admin.js"></script></body></html>
